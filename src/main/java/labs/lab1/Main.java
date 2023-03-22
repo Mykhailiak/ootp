@@ -1,6 +1,9 @@
 package labs.lab1;
 
 import labs.lab1.checkout.Checkout;
+import labs.lab1.delivery.Delivery;
+import labs.lab1.delivery.DhlDelivery;
+import labs.lab1.delivery.FedexDelivery;
 import labs.lab1.paymentSystem.GooglePayPaymentSystem;
 import labs.lab1.paymentSystem.PayPalPaymentSystem;
 import labs.lab1.paymentSystem.PaymentSystemFactory;
@@ -22,6 +25,7 @@ public class Main {
 
         return new FedexDelivery();
     }
+
     public static void main(String[] args) {
         PaymentSystemFactory paymentSystemFactory = getPaymentSystemFactory();
         Delivery delivery = getDeliveryMethod();

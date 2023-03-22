@@ -1,4 +1,4 @@
-package labs.lab1;
+package labs.lab1.delivery;
 
 public class DhlDelivery implements Delivery {
     @Override
