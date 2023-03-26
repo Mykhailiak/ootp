@@ -1,13 +1,20 @@
 package labs.lab3;
 
+import labs.lab3.commands.Command;
+import labs.lab3.commands.CopyCommand;
+import labs.lab3.commands.DeleteCommand;
+import labs.lab3.commands.UpdateCommand;
 import labs.lab3.document.Document;
 import labs.lab3.document.DocumentTypes;
 import labs.lab3.eventManager.EventManager;
 import labs.lab3.notificationServices.EmailNotificationService;
 import labs.lab3.notificationServices.SmsNotificationService;
 
+import java.util.List;
+
 public class Main {
     static String VALIDATION_COMPLETE_EVENT = "VALIDATION_COMPLETE_EVENT";
+
     public static EventManager setupNotificationService() {
         EventManager eventManager = new EventManager();
         SmsNotificationService smsNotificationService = new SmsNotificationService();
@@ -17,6 +24,20 @@ public class Main {
         eventManager.subscribe(VALIDATION_COMPLETE_EVENT, emailNotificationService);
 
         return eventManager;
+    }
+
+    public static void performDocumentOperations() {
+        ActionsHistory actionsRegistry = new ActionsHistory();
+        CopyCommand copyCommand = new CopyCommand(1);
+        UpdateCommand updateCommand = new UpdateCommand(1);
+        DeleteCommand deleteCommand = new DeleteCommand(2);
+
+        actionsRegistry.add(copyCommand);
+        actionsRegistry.add(updateCommand);
+        actionsRegistry.add(deleteCommand);
+        actionsRegistry.remove(deleteCommand);
+
+        System.out.println(actionsRegistry.getHistory());
     }
     public static void main(String[] args) {
         Document validExcelDoc = new Document(DocumentTypes.EXCEL, "A0:B0");
@@ -32,5 +53,7 @@ public class Main {
         System.out.println(validator.validateDocument(invalidDocxDoc)); // FALSE
         System.out.println(validator.validateDocument(validExcelDoc)); // TRUE
         System.out.println(validator.validateDocument(invalidExcelDoc)); // FALSE
+
+        performDocumentOperations();
     }
 }
