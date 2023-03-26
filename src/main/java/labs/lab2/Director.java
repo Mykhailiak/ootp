@@ -1,5 +1,7 @@
 package labs.lab2;
 
+import labs.lab2.builders.Builder;
+
 public class Director {
     public void constructCommitmentDocument(Builder builder) {
         builder.addLogo();

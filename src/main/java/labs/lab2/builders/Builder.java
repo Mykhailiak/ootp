@@ -1,4 +1,4 @@
-package labs.lab2;
+package labs.lab2.builders;
 
 public interface Builder {
     void addLogo();

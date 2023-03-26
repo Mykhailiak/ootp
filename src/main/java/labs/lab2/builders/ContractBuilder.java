@@ -1,12 +1,10 @@
-package labs.lab2;
+package labs.lab2.builders;
 
+import labs.lab2.Contract;
 import labs.lab2.elements.ContractDate;
 import labs.lab2.elements.Logo;
 import labs.lab2.elements.Position;
 import labs.lab2.elements.SignatureField;
-
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class ContractBuilder implements Builder {
     private Logo logo;
