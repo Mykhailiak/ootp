@@ -1,6 +1,6 @@
 package labs.lab2.builders;
 
-import labs.lab2.Contract;
+import labs.lab2.contract.Contract;
 import labs.lab2.elements.ContractDate;
 import labs.lab2.elements.Logo;
 import labs.lab2.elements.Position;
