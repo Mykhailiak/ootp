@@ -2,7 +2,6 @@ package labs.lab2.elements;
 
 public class SignatureField {
     Position position;
-
     String signer;
 
     public SignatureField(String signer, Position position) {
