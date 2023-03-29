@@ -7,7 +7,7 @@ public class OpenDrapesCommand implements Command {
     }
 
     @Override
-    public void stop() {
+    public void undo() {
         System.out.println("Drapes have been closed");
     }
 }
