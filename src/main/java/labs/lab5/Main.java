@@ -2,6 +2,9 @@ package labs.lab5;
 
 import labs.lab5.categories.DriverTypes;
 import labs.lab5.categories.ScheduleType;
+import labs.lab5.units.BranchUnit;
+import labs.lab5.units.RegionUnit;
+import labs.lab5.units.TopManagementUnit;
 
 import java.util.ArrayList;
 
@@ -11,11 +14,17 @@ public class Main {
         ScheduleBoard scheduleBoard = new ScheduleBoard(employeesList);
 
         scheduleBoard.getSchedule(DriverTypes.TRUCK, ScheduleType.EVEN);
-        
+
         EmployeeMonitoring employeeMonitoring = new EmployeeMonitoring(54);
         employeeMonitoring.getState().registerTrip();
         employeeMonitoring.getState().sendOnTrip();
         employeeMonitoring.getState().returnFromTrip();
+
+        TopManagementUnit topManagementUnit = new TopManagementUnit(null);
+        RegionUnit regionUnit = new RegionUnit(topManagementUnit);
+        BranchUnit branchUnit = new BranchUnit(regionUnit);
+
+        branchUnit.notifyManager();
     }
 
     public static ArrayList<Employee> getEmployeesList() {

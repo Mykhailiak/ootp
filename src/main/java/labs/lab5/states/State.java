@@ -2,7 +2,7 @@ package labs.lab5.states;
 
 import labs.lab5.EmployeeMonitoring;
 
-abstract public class State {
+public abstract class State {
     protected String state = "Default";
     protected EmployeeMonitoring employeeMonitoring;
 
@@ -14,15 +14,9 @@ abstract public class State {
         return this.state;
     }
 
-    public void registerTrip() {
+    abstract public void registerTrip();
 
-    }
+    abstract public void sendOnTrip();
 
-    public void sendOnTrip() {
-
-    }
-
-    public void returnFromTrip() {
-
-    }
+    abstract public void returnFromTrip();
 }

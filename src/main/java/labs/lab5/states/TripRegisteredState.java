@@ -12,4 +12,14 @@ public class TripRegisteredState extends State {
     public void sendOnTrip() {
         employeeMonitoring.changeState(new TripInProgressState(employeeMonitoring));
     }
+
+    @Override
+    public void registerTrip() {
+
+    }
+
+    @Override
+    public void returnFromTrip() {
+
+    }
 }

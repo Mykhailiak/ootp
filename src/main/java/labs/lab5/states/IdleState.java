@@ -14,4 +14,14 @@ public class IdleState extends State {
     public void registerTrip() {
         employeeMonitoring.changeState(new TripRegisteredState(employeeMonitoring));
     }
+
+    @Override
+    public void returnFromTrip() {
+
+    }
+
+    @Override
+    public void sendOnTrip() {
+
+    }
 }
