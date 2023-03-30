@@ -11,6 +11,11 @@ public class Main {
         ScheduleBoard scheduleBoard = new ScheduleBoard(employeesList);
 
         scheduleBoard.getSchedule(DriverTypes.TRUCK, ScheduleType.EVEN);
+        
+        EmployeeMonitoring employeeMonitoring = new EmployeeMonitoring(54);
+        employeeMonitoring.getState().registerTrip();
+        employeeMonitoring.getState().sendOnTrip();
+        employeeMonitoring.getState().returnFromTrip();
     }
 
     public static ArrayList<Employee> getEmployeesList() {
