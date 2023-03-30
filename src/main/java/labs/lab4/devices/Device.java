@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 public class Device {
     HashMap<String, String> parsedInfo;
+
     protected HashMap<String, String> getParsedInfo() {
         HashMap<String, String> info = new HashMap<>();
 
