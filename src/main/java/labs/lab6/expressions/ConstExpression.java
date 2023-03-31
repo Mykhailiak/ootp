@@ -1,4 +1,7 @@
-package labs.lab6;
+package labs.lab6.expressions;
+
+import labs.lab6.Context;
+import labs.lab6.expressions.Expression;
 
 public class ConstExpression extends Expression {
     private int value;

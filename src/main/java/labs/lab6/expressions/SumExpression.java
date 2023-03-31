@@ -1,4 +1,6 @@
-package labs.lab6;
+package labs.lab6.expressions;
+
+import labs.lab6.Context;
 
 public class SumExpression extends Expression {
     private ConstExpression a;
@@ -11,7 +13,6 @@ public class SumExpression extends Expression {
 
     @Override
     public Integer interpret(Context context) throws Exception {
-        System.out.println(this.a);
         return this.a.interpret(context) + this.b.interpret(context);
     }
 }
