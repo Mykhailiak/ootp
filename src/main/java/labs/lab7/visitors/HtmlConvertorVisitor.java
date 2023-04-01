@@ -4,7 +4,7 @@ import labs.lab7.representers.MarkdownRepresenter;
 import labs.lab7.representers.Representer;
 import labs.lab7.representers.YamlRepresenter;
 
-public class HtmlCovertorVisitor implements Visitor {
+public class HtmlConvertorVisitor implements Visitor {
     public String visitMarkdownRepresenter(MarkdownRepresenter markdownRepresenter) {
         String markdown = markdownRepresenter.getMarkdownText();
 

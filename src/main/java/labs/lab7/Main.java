@@ -2,20 +2,20 @@ package labs.lab7;
 
 import labs.lab7.representers.MarkdownRepresenter;
 import labs.lab7.representers.YamlRepresenter;
-import labs.lab7.visitors.HtmlCovertorVisitor;
+import labs.lab7.visitors.HtmlConvertorVisitor;
 
 public class Main {
     public static void main(String[] args) {
         TextEditor textEditor = new TextEditor("Welcome to our text editor!");
         YamlRepresenter yamlRepresenter = new YamlRepresenter();
         MarkdownRepresenter markdownRepresenter = new MarkdownRepresenter();
-        HtmlCovertorVisitor htmlCovertorVisitor = new HtmlCovertorVisitor();
+        HtmlConvertorVisitor htmlConvertorVisitor = new HtmlConvertorVisitor();
 
         yamlRepresenter.setContent("title: Hey there I'm YAML");
         markdownRepresenter.setContent("# Hey there I'm Markdown");
 
-        String htmlMarkdown = htmlCovertorVisitor.convert(markdownRepresenter);
-        String htmlYaml = htmlCovertorVisitor.convert(yamlRepresenter);
+        String htmlMarkdown = htmlConvertorVisitor.convert(markdownRepresenter);
+        String htmlYaml = htmlConvertorVisitor.convert(yamlRepresenter);
 
         System.out.println("Markdown -> HTML: " + htmlMarkdown);
         System.out.println("Yaml -> HTML: " + htmlYaml);
